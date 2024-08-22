@@ -1,20 +1,20 @@
 const readlineSync = require("readline-sync");
 
-const weightInKg = readlineSync.questionInt("What is your weight? ");
+const weightInKg = readlineSync.questionInt("What is your weight in kilograms? ");
 console.log("Your weight is ", weightInKg);
 
-const heightInM = readlineSync.questionFloat("What is your height? ");
+const heightInM = readlineSync.questionFloat("What is your height in meters? ");
 console.log("Your height is ", heightInM);
 
 let bmi = weightInKg / (heightInM * heightInM);
 console.log("Your BMI is", bmi.toFixed(2));
 
-console.log("Smaller than 16?", bmi > 16);
+console.log("Smaller than 16?", bmi < 16);
 
 let category;
 
 if (bmi < 16) {
-  category = "Severly Underweight";
+  category = "Severely Underweight";
 } else if (bmi >= 16 && bmi <= 18.4) {
   category = "Underweight";
 } else if (bmi >= 18.5 && bmi <= 24.9) {
@@ -25,4 +25,4 @@ if (bmi < 16) {
   category = "Obese";
 }
 
-console.log(category);
+console.log("Your BMI category is:", category);
